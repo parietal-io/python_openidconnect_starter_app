@@ -1,0 +1,46 @@
+{
+  "name": "Easy Biometric Authentication",
+  "description": "Sample Python application which demonstrates usage of Deauthorized API.",
+  "image": "heroku/python",
+  "repository": "https://github.com/Deauthorized/python_openidconnect_starter_app",
+  "keywords": ["python", "django" ],
+  "addons": [ "heroku-postgresql" ],
+  "env": {
+    "OPENID_CLIENT_ID": {
+      "description": "Client ID registered on OpenID provider",
+      "value": "deauthorized"
+    },
+    "OPENID_CLIENT_SECRET": {
+      "description": "Client secret provided from OpenID provider",
+      "value": "123"
+    },
+    "OPENID_HOST": {
+      "description": "OpenID provider hostname",
+      "value": "srv.qryp.to"
+    },
+    "OPENID_PORT": {
+      "description": "OpenID provider port number",
+      "value": "443"
+    },
+    "OPENID_ISSUER": {
+      "description": "OpenID issuer URL",
+      "value": "https://srv.qryp.to/op"
+    },
+    "OPENID_REDIRECT_URI": {
+      "description": "OpenID Redirect URL",
+      "value": "http://my-api/openid_auth_callback"
+    },
+    "SECRET_KEY": {
+      "description": "The secret key for the Django application.",
+      "generator": "secret"
+    }
+  },
+  "environments": {
+    "test": {
+      "scripts": {
+        "test-setup": "python manage.py collectstatic --noinput",
+        "test": "python manage.py test"
+      }
+    }
+  }
+}
