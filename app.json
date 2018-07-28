@@ -26,10 +26,6 @@
       "description": "OpenID issuer URL",
       "value": "https://srv.qryp.to/op"
     },
-    "OPENID_REDIRECT_URI": {
-      "description": "OpenID Redirect URL",
-      "value": "http://my-api/openid_auth_callback"
-    },
     "SECRET_KEY": {
       "description": "The secret key for the Django application.",
       "generator": "secret"
