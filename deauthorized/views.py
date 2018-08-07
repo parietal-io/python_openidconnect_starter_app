@@ -58,7 +58,9 @@ def auth(request):
         'scope': ' '.join(SCOPES_SUPPORTED)
     }
 
-    return redirect(auth_endpoint + '?' + urlencode(params))
+    auth_url = auth_endpoint + '?' + urlencode(params)
+
+    return render(request, 'auth_iframe.html', {'auth_url': auth_url})
 
 
 def auth_callback(request):
